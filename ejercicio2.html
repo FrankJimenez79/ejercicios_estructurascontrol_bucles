@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejercicios de estructuras de control bucles</title>
+    <meta
+      name="description"
+      content="Ejercicios de estructuras de control bucles"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
+    <script>
+      /* 2 📀 Playlist
+
+      Crear un programa que pida al usuario ingresar el nombre de una playlist 
+      y cuántas canciones desea agregar a la misma. Luego debe ir pidiendo agregar 
+      la cantidad de canciones elegidas de a una. Se debe ir mostrando la cantidad 
+      de canciones que quedan por agregar y la playlist con los temas hasta el
+      momento a medida que se va a actualizando. Al finalizar mostrar un mensaje 
+      con el nombre de la playlist y la lista de canciones.*/
+
+      let nombrePlaylist = prompt("Dime el nombre de la Playlist:");
+      let numeroCanciones = Number(prompt("Cuantas canciones quieres agregar"));
+      let canciones = "";
+      let contadorCanciones = numeroCanciones;
+
+      for (let i = 0; i < numeroCanciones; i++) {
+        let cancion = prompt("Que cancion quieres agregar?");
+        canciones = canciones + cancion + " ";
+
+        contadorCanciones = contadorCanciones - 1;
+        console.log(
+          `Quedan por agregar ${contadorCanciones} canciones. Playlist: ${nombrePlaylist} Canciones: ${canciones}`
+        );
+      }
+
+      console.log(`Playlist: ${nombrePlaylist} Canciones: ${canciones}`);
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h2>Ejercicio 2</h2>
+      <nav>
+        <a href="index.html">Volver atras</a>
+      </nav>
+    </header>
+  </body>
+</html>

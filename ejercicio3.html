@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejercicios de estructuras de control bucles</title>
+    <meta
+      name="description"
+      content="Ejercicios de estructuras de control bucles"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
+    <script>
+      /* 3 🔍 Número mayor o menor
+
+      Crear un programa que pregunte si se desea buscar
+      el mayor o el menor número de un conjunto. Luego,
+      preguntar entre cuántos se desea buscar. Ir pidiendo
+      ingresar uno por uno la cantidad de números que se eligió,
+      y al finalizar mostrar el número mayor o menor de todos los
+      ingresados según el elegido.*/
+
+      let mayorMenor = prompt("Que quiere buscar? MAYOR/MENOR")
+        .trim()
+        .toLowerCase();
+      let numerosABuscar = Number(prompt("Cuantos numero quiere introducir?"));
+      let numeroMayor = -Infinity;
+      let numeroMenor = Infinity;
+
+      if (mayorMenor === "mayor") {
+        for (let i = 0; i < numerosABuscar; i++) {
+          let numeroIntroducido = Number(prompt("Introduzca un numero:"));
+
+          if (numeroIntroducido > numeroMayor) {
+            numeroMayor = numeroIntroducido;
+          }
+        }
+        console.log(`El numero mayor es ${numeroMayor}.`);
+      } else if (mayorMenor === "menor") {
+        for (let i = 0; i < numerosABuscar; i++) {
+          let numeroIntroducido = Number(prompt("Introduzca un numero:"));
+
+          if (numeroIntroducido < numeroMenor) {
+            numeroMenor = numeroIntroducido;
+          }
+        }
+        console.log(`El numero menor es ${numeroMenor}.`);
+      } else {
+        console.log("No ha intoducido una opcion correcta");
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h2>Ejercicio 3</h2>
+      <nav>
+        <a href="index.html">Volver atras</a>
+      </nav>
+    </header>
+  </body>
+</html>
