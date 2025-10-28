@@ -23,19 +23,35 @@
 
     <link rel="manifest" href="site.webmanifest" />
     <meta name="theme-color" content="#fafafa" />
+    <script>
+      /* 4 ❗️ Factorial
+
+      Crear un programa que pida ingresar un número, y muestre 
+      su factorial. Este se calcula multiplicando el mismo número 
+      y todos los números que le anteceden hasta el 1. 
+      Por ejemplo: 4 ⇒ 4 * 3 * 2 * 1 = 24*/
+
+      let numero = Number(
+        prompt("Introduce un numero para calcular el factorial:")
+      );
+
+      if (isNaN(numero)) {
+        console.log("Por favor introduce un numero");
+      } else {
+        let factorial = 1;
+        for (let i = 1; i < numero + 1; i++) {
+          factorial = factorial * i;
+        }
+        console.log(`El factorial de ${numero} es ${factorial}`);
+      }
+    </script>
   </head>
 
   <body>
     <header>
-      <h1>Ejercicios de estructuras de control -Bucles-</h1>
+      <h2>Ejercicio 4</h2>
       <nav>
-        <ul>
-          <li><a href="ejercicio1.html">Ejercicio 1</a></li>
-          <li><a href="ejercicio2.html">Ejercicio 2</a></li>
-          <li><a href="ejercicio3.html">Ejercicio 3</a></li>
-          <li><a href="ejercicio4.html">Ejercicio 4</a></li>
-          <li><a href="ejercicio5.html">Ejercicio 5</a></li>
-        </ul>
+        <a href="index.html">Volver atras</a>
       </nav>
     </header>
   </body>

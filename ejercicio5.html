@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejercicios de estructuras de control bucles</title>
+    <meta
+      name="description"
+      content="Ejercicios de estructuras de control bucles"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
+    <script>
+      /* 5 🏃‍♀️ Carrera
+
+      Crear un programa para controlar las vueltas de una deportista. 
+      Debe pedir al usuario la cantidad de vueltas que va a realizar e ir 
+      preguntando el tiempo en segundos de cada vuelta. Al final, se debe 
+      mostrar un mensaje listando los tiempos de cada vuelta y el promedio 
+      del tiempo de las vueltas (suma de las vueltas / cantidad de vueltas). 
+      Ejemplo:
+      Cantidad de vueltas: 3
+      Vuelta 1: 133s
+      Vuelta 2: 145s
+      Vuelta 3: 166s
+      ⏱ Promedio: 144.45s */
+
+      let vueltasUsuario = Number(prompt("Cuantas vueltas vas a dar?"));
+      let tiempos = "";
+      let tiempoTotal = 0;
+
+      if (vueltasUsuario === null || vueltasUsuario === "") {
+        console.log("Operacion cancelada o entrada vacia");
+      } else if (
+        isNaN(vueltasUsuario) ||
+        !Number.isInteger(vueltasUsuario) ||
+        vueltasUsuario < 0
+      ) {
+        console.log("Por favor introduce un numero de vueltas valido");
+      } else {
+        for (let i = 1; i <= vueltasUsuario; i++) {
+          let tiempoVuelta = Number(
+            prompt("Cuanto tiempo has tardado en esta vuelta?:")
+          );
+          tiempos = `Vuelta ${i} : ${tiempoVuelta} + s\n `;
+          tiempoTotal = tiempoTotal + tiempoVuelta;
+        }
+      }
+
+      let promedio = tiempoTotal / vueltasUsuario;
+
+      console.log(
+        `Cantidad de vueltas: ${vueltasUsuario} \n ${tiempos} \n Promedio: ${promedio} s`
+      );
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h2>Ejercicio 5</h2>
+      <nav>
+        <a href="index.html">Volver atras</a>
+      </nav>
+    </header>
+  </body>
+</html>
