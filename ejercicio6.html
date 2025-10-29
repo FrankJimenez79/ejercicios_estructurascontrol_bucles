@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejercicios de estructuras de control bucles</title>
+    <meta
+      name="description"
+      content="Ejercicios de estructuras de control bucles"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
+    <script>
+      /*6 ✊🤚✌️ Piedra, papel, tijera II
+
+      Al ejercicio de Piedra, papel, tijera de condicionales, agregarle la 
+      posibilidad de jugar la cantidad de rondas que se deseen. Por cada ronda, 
+      se debe mostrar ambas jugadas (usuario y computadora), quién gano la ronda, 
+      puntaje parcial hasta el momento y rondas restantes. Al finalizar se debe 
+      indicar quién ganó. Ejemplo:
+      Ronda: 2 de 5
+      🙍‍♀️ Jugadora: Piedra
+      👾 Computadora: Tijera
+      Jugadora ha ganado esta ronda 🎉
+      Puntaje: 2 (Jugadora) - 0 (Computadora)
+    
+
+      /* ✊🤚✌️ Piedra, papel o tijera
+
+      Crear un programa que permita ingresar al jugador piedra, papel o tijera, 
+      genere de forma aleatoria la jugada de la computadora, y muestre en un mensaje 
+      quién ganó, con las jugadas respectivas.*/
+
+      let rondas = Number(prompt("Cuantas rondas vas a jugar?"));
+      let parcialUsuario = 0;
+      let parcialComputadora = 0;
+      for (let i = 1; i <= rondas; i++) {
+        let jugadaUsuario = prompt(
+          "Elige: Piedra, papel o tijera?"
+        ).toLowerCase();
+
+        let jugadaComputadora = Math.floor(Math.random() * 3);
+        if (jugadaComputadora === 0) {
+          jugadaComputadora = "piedra";
+        }
+        if (jugadaComputadora === 1) {
+          jugadaComputadora = "papel";
+        }
+        if (jugadaComputadora === 2) {
+          jugadaComputadora = "tijera";
+        }
+
+        if (jugadaUsuario === jugadaComputadora) {
+          alert(
+            `Usuario: ${jugadaUsuario} Computadora: ${jugadaComputadora} ----> Empate.`
+          );
+          alert(`Quedan ${rondas - i} rondas.`);
+          alert(
+            `Usuario: ${parcialUsuario} . Computadora ${parcialComputadora}`
+          );
+        } else if (
+          jugadaUsuario === "piedra" &&
+          jugadaComputadora === "tijera"
+        ) {
+          alert(
+            `Usuario: ${jugadaUsuario} Computadora: ${jugadaComputadora} ----> Gana Usuario.`
+          );
+          parcialUsuario = parcialUsuario + 1;
+          alert(
+            `Usuario: ${parcialUsuario} . Computadora ${parcialComputadora}`
+          );
+          alert(`Quedan ${rondas - i} rondas.`);
+        } else if (
+          jugadaUsuario === "papel" &&
+          jugadaComputadora === "piedra"
+        ) {
+          alert(
+            `Usuario: ${jugadaUsuario} Computadora: ${jugadaComputadora} ----> Gana Usuario.`
+          );
+          parcialUsuario = parcialUsuario + 1;
+          alert(
+            `Usuario: ${parcialUsuario} . Computadora ${parcialComputadora}`
+          );
+          alert(`Quedan ${rondas - i} rondas.`);
+        } else if (
+          jugadaUsuario === "tijera" &&
+          jugadaComputadora === "papel"
+        ) {
+          alert(
+            `Usuario: ${jugadaUsuario} Computadora: ${jugadaComputadora} ----> Gana Usuario.`
+          );
+          parcialUsuario = parcialUsuario + 1;
+          alert(
+            `Usuario: ${parcialUsuario} . Computadora ${parcialComputadora}`
+          );
+          alert(`Quedan ${rondas - i} rondas.`);
+        } else {
+          alert(
+            `Usuario: ${jugadaUsuario} Computadora: ${jugadaComputadora} ----> Gana Computadora.`
+          );
+          parcialComputadora = parcialComputadora + 1;
+          alert(
+            `Usuario: ${parcialUsuario} . Computadora ${parcialComputadora}`
+          );
+          alert(`Quedan ${rondas - i} rondas.`);
+        }
+      }
+      if (parcialComputadora === parcialUsuario) {
+        alert(`Ha habido un empate.`);
+      } else if (parcialComputadora > parcialUsuario) {
+        alert(`La computadora ha ganado.`);
+      } else {
+        alert(`El usuario ha ganado.`);
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h2>Ejercicio 6</h2>
+      <nav>
+        <a href="index.html">Volver atras</a>
+      </nav>
+    </header>
+  </body>
+</html>
