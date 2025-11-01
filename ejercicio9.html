@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejercicios de estructuras de control bucles</title>
+    <meta
+      name="description"
+      content="Ejercicios de estructuras de control bucles"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
+    <script>
+      /* 9 💲Cara o cruz
+
+      Crear un programa que permita escoger entre cara o cruz. 
+      El programa luego debe generar un resultado aleatorio y 
+      mostrar si se acertó o no. El programa debe mostrar en cada 
+      vuelta cuántas rondas seguidas acertadas van, y si en algún 
+      momento se erra, reiniciar el contador a 0. También debe llevar 
+      una cuenta de la cantidad máxima de rondas seguidas que se hizo 
+      sin errar. Cuando se ingresa la palabra SALIR, en vez de CARA o CRUZ, 
+      el programa debe mostrar la cantidad máxima de rondas seguidas acertadas 
+      junto a un mensaje de despedida, y terminar su ejecución.*/
+      let racha = 0;
+      let rachaMaxima = 0;
+      while (true) {
+        let eleccionUsuario = prompt("Elige: CARA/CRUZ o SALIR")
+          .trim()
+          .toLowerCase();
+        if (eleccionUsuario === "salir") {
+          alert(
+            `Hasta la proxima. Has conseguido ganar ${rachaMaxima} partidas seguidas.`
+          );
+
+          break;
+        }
+        let jugadaOrdenador = Math.floor(Math.random() * 2);
+        if (jugadaOrdenador === 0) {
+          jugadaOrdenador = "cara";
+        } else {
+          jugadaOrdenador = "cruz";
+        }
+        if (eleccionUsuario === jugadaOrdenador) {
+          alert(
+            `Has ganado. Ha salido ${jugadaOrdenador} y has dicho ${eleccionUsuario}`
+          );
+          racha++;
+          if (racha > rachaMaxima) {
+            rachaMaxima = racha;
+          }
+          alert(`Llevas ${racha} partidas seguidas ganadas.`);
+          alert(
+            `Tu record de partidas ganadas hasta ahora es de ${rachaMaxima}.`
+          );
+        } else {
+          alert(
+            `Lo siento no has acertado. Salió ${jugadaOrdenador} y tu dijiste ${eleccionUsuario}`
+          );
+          racha = 0;
+          alert(`Ponemos el contador de victorias a 0.`);
+          alert(
+            `Tu record de partidas ganadas hasta ahora es de ${rachaMaxima}.`
+          );
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h2>Ejercicio 9</h2>
+      <nav>
+        <a href="index.html">Volver atras</a>
+      </nav>
+    </header>
+  </body>
+</html>

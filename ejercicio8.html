@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejercicios de estructuras de control bucles</title>
+    <meta
+      name="description"
+      content="Ejercicios de estructuras de control bucles"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
+    <script>
+      /* 8 🔐 Múltiples intentos
+
+      Crear un programa que pida ingresar usuario y contraseña. 
+      El programa debe permitir hasta 3 intentos, cuando el usuario y/o 
+      la contraseña sean incorrectos. Si se ingresa correctamente ambos 
+      antes de 3 intentos erróneos, debe mostrar un mensaje de bienvenida. 
+      Si se ingresan 3 intentos erróneos, debe mostrar un mensaje de error 
+      y terminar el programa. El usuario y la contraseña ya deben estar 
+      guardadas en variables. */
+
+      let usuarioGuardado = "frankjb79";
+      let contraseñaGuardada = "31081979Frank@";
+      let contador = 0;
+
+      while (contador < 3) {
+        let usuario = prompt("Introduce tu usuario:");
+        let contraseña = prompt("Introduce tu contraseña:");
+        if (usuario === usuarioGuardado && contraseña === contraseñaGuardada) {
+          alert(`Registro existoso.`);
+          break;
+        } else {
+          alert(
+            `El usuario o la contraseña son incorrectas. Vuelve a intentarlo`
+          );
+          contador++;
+        }
+      }
+      if (contador === 3) {
+        alert(`3 intentos fallidos. Lo siento.`);
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h2>Ejercicio 8</h2>
+      <nav>
+        <a href="index.html">Volver atras</a>
+      </nav>
+    </header>
+  </body>
+</html>
