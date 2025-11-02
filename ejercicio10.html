@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejercicios de estructuras de control bucles</title>
+    <meta
+      name="description"
+      content="Ejercicios de estructuras de control bucles"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
+    <script>
+      /* 10 ⚖️ Mayor o menor
+
+      Crear un programa que elija un número al azar entre 1 y 10. 
+      El programa debe luego pedir al usuario que intente adivinar el número. 
+      Por cada intento, debe avisar si el número a adivinar es mayor o menor 
+      que el número ingresado. El programa debe terminar cuando se adivina el número.*/
+
+      let numeroAzar = Math.floor(Math.random() * 10 + 1);
+
+      while (true) {
+        const numeroUsuarioRaw = prompt(
+          "Intenta adivinar un numero del 1 al 10:"
+        );
+        if (numeroUsuarioRaw === null) {
+          alert(`Hasta la proxima.`);
+          break;
+        }
+        let numeroUsuario = numeroUsuarioRaw.trim();
+        if (numeroUsuario === "") {
+          alert(
+            `No has introducido nada. Por favor introduce un valor valido.`
+          );
+          continue;
+        }
+
+        numeroUsuario = Number(numeroUsuario);
+        if (isNaN(numeroUsuario) || numeroUsuario < 1 || numeroUsuario > 10) {
+          alert(`Por favor introduce un valor valido entre el 1 y el 10.`);
+          continue;
+        }
+
+        if (numeroAzar === numeroUsuario) {
+          alert(`Excelente. Adivinaste el numero.`);
+          break;
+        } else if (numeroUsuario > numeroAzar) {
+          alert(
+            `Lo siento no has acertado. El numero a adivinar es menor que tu numero ${numeroUsuario}`
+          );
+        } else {
+          alert(
+            `Lo siento no has acertado. El numero a adivinar es mayor que tu numero ${numeroUsuario}`
+          );
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h2>Ejercicio 10</h2>
+      <nav>
+        <a href="index.html">Volver atras</a>
+      </nav>
+    </header>
+  </body>
+</html>

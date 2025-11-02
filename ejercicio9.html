@@ -38,9 +38,26 @@
       let racha = 0;
       let rachaMaxima = 0;
       while (true) {
-        let eleccionUsuario = prompt("Elige: CARA/CRUZ o SALIR")
-          .trim()
-          .toLowerCase();
+        const entradaRaw = prompt("Elige: CARA/CRUZ o SALIR");
+        if (entradaRaw === null) {
+          alert(
+            `Hasta la proxima. Has conseguido ganar ${rachaMaxima} partidas seguidas.`
+          );
+          break;
+        }
+        const eleccionUsuario = entradaRaw.trim().toLowerCase();
+
+        if (eleccionUsuario === "") {
+          alert(`No has escrito nada. Vuelve a intentar.`);
+          continue;
+        }
+
+        const operacionesValidas = ["cara", "cruz", "salir"];
+        if (!operacionesValidas.includes(eleccionUsuario)) {
+          alert(`Valor invalido. Escribe Cara, Cruz o Salir.`);
+          continue;
+        }
+
         if (eleccionUsuario === "salir") {
           alert(
             `Hasta la proxima. Has conseguido ganar ${rachaMaxima} partidas seguidas.`
